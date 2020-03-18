@@ -23,22 +23,26 @@ function convertToWord(letter) {
 function win(userChoice, computerChoice) {
   userScore++;
   userScore_span.innerHTML = userScore;
-  computerScore_span = computerScore;
+  computerScore_span.innerHTML = computerScore;
   const smallUserWord = "user".fontsize(3).sub();
   const smallCompWord = "comp".fontsize(3).sub();
   result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win!`;
 };
 
 
-function lose() {
+function lose(userChoice, computerChoice) {
   computerScore++;
   userScore_span.innerHTML = userScore;
-  computerScore_span = computerScore;
-  result_p.innerHTML = `${convertToWord(userChoice)}(user) beats ${convertToWord(computerChoice)}(computer). You win!`;
+  computerScore_span.innerHTML = computerScore;
+  const smallUserWord = "user".fontsize(3).sub();
+  const smallCompWord = "comp".fontsize(3).sub();
+  result_p.innerHTML = `${convertToWord(userChoice)}(user) loses to ${convertToWord(computerChoice)}(computer). You lost...`;
 };
 
-function draw() {
-  console.log("draw");
+function draw(userChoice, computerChoice) {
+  const smallUserWord = "user".fontsize(3).sub();
+  const smallCompWord = "comp".fontsize(3).sub();
+  result_p.innerHTML = `${convertToWord(userChoice)}(user) equals ${convertToWord(computerChoice)}(computer). It's a draw.`;
 };
 
 function game(userChoice) {
